@@ -1,0 +1,86 @@
+.container {
+  display: grid;
+  grid-template-columns:
+    [side-start] 8rem [side-end grid-start]
+    minmax(5rem, 1fr)
+    repeat(12, [col-start] minmax(min-content, 10rem) [col-end])
+    minmax(5rem, 1fr) [grid-end];
+  grid-template-rows:
+    [head-start] 80vh [head-end features-start]
+    min-content [features-end story-start]
+    40vw [story-end]
+    repeat(3, [row-start] min-content [row-end]);
+  @include responsive(bp-900) {
+    grid-template-columns:
+      [grid-start] minmax(5rem, 1fr)
+      repeat(12, [col-start] minmax(min-content, 10rem) [col-end])
+      minmax(5rem, 1fr) [grid-end];
+    grid-template-rows:
+      [side-start] 8rem [side-end head-start]
+      80vh [head-end features-start]
+      min-content [features-end story-start]
+      40vw [story-end]
+      repeat(3, [row-start] min-content [row-end]);
+  }
+  @include responsive(bp-800) {
+    grid-template-columns:
+      [grid-start] minmax(5rem, 1fr)
+      repeat(12, [col-start] minmax(min-content, 10rem) [col-end])
+      minmax(5rem, 1fr) [grid-end];
+    grid-template-rows:
+      [side-start] 8rem [side-end head-start]
+      80vh [head-end realtor-start]
+      min-content [realtor-end features-start]
+      min-content [features-end story-start]
+      repeat(2, minmax(min-content, 60vw)) [story-end]
+      repeat(3, [row-start] min-content [row-end]);
+  }
+}
+.side {
+  background: $color-primary;
+  grid-row: head-start / -1;
+  @include responsive(bp-900) {
+    grid-column: grid;
+    grid-row: side;
+  }
+}
+.header {
+  grid-column: grid-start / col-end 9;
+  @include responsive(bp-800) {
+    grid-column: grid;
+  }
+}
+.realtor {
+  background: $color-secondary;
+  grid-column: col-start 10 / grid-end;
+  @include responsive(bp-800) {
+    grid-column: grid;
+    grid-row: realtor;
+  }
+}
+.section-features {
+  grid-column: col-start 1 / col-end 12;
+}
+.story__pictures {
+  grid-column: grid-start / col-end 6;
+  @include responsive(bp-800) {
+    grid-column: grid;
+  }
+}
+.story__content {
+  background: $color-grey-l2;
+  grid-column: col-start 7 / grid-end;
+  @include responsive(bp-800) {
+    grid-column: grid;
+  }
+}
+.section-houses {
+  grid-column: col-start 1 / col-end 12;
+}
+.image-gallery {
+  grid-column: grid-start / grid-end;
+}
+.footer {
+  background: $color-secondary;
+  grid-column: grid;
+}

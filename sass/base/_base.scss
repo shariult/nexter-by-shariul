@@ -1,0 +1,24 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+html {
+  font-size: 62.5%; //Set 1rem = 10px (10/16*100)
+  box-sizing: border-box;
+  @include responsive(bp-1250) {
+    font-size: 57%;
+  }
+  @include responsive(bp-1050) {
+    font-size: 50%;
+  }
+}
+body {
+  font-size: 1.6rem;
+  font-weight: 300;
+  font-family: $font-primary;
+  color: $color-grey-font;
+  line-height: 1.6;
+}

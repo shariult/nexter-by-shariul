@@ -1,0 +1,33 @@
+.side {
+  .bar {
+    display: block;
+    height: 0.3rem;
+    width: 5rem;
+    background-color: $color-grey-l2;
+    margin: 3rem auto;
+    @include responsive(bp-900) {
+      margin: 3rem;
+    }
+    &::before {
+      content: "";
+      display: block;
+      height: 0.3rem;
+      width: 5rem;
+      background-color: $color-grey-l2;
+      margin: 0 auto;
+      transform: translateY(-1rem);
+    }
+    &::after {
+      content: "";
+      display: block;
+      height: 0.3rem;
+      width: 5rem;
+      background-color: $color-grey-l2;
+      margin: 0 auto;
+      transform: translateY(0.9rem);
+      @include responsive(bp-900) {
+        height: 0.2rem;
+      }
+    }
+  }
+}

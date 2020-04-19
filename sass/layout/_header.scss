@@ -1,0 +1,63 @@
+.header {
+  background: linear-gradient(
+      to right bottom,
+      rgba($color-secondary, 0.93),
+      rgba($color-secondary, 0.93)
+    ),
+    url(../img/hero.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: grid;
+  align-items: space-around;
+  padding: 4rem 8rem;
+  background-position: center;
+}
+
+.logo-box {
+  width: 14rem;
+  justify-self: center;
+  &__logo {
+    width: 100%;
+  }
+}
+.seen {
+  &__text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+    white-space: nowrap;
+    &::before {
+      content: "";
+      height: 0.1rem;
+      width: 25vw;
+      background-color: $color-grey-l2;
+      display: inline-block;
+      margin-right: 1rem;
+    }
+    &::after {
+      content: "";
+      height: 0.1rem;
+      width: 25vw;
+      background-color: $color-grey-l2;
+      display: inline-block;
+      margin-left: 1rem;
+    }
+  }
+  &__box {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  &__logo {
+    height: 2.3rem;
+    display: block;
+    filter: brightness(70%);
+    @include responsive(bp-550) {
+      height: 1.5rem;
+    }
+    @include responsive(bp-400) {
+      height: 1rem;
+    }
+  }
+}
